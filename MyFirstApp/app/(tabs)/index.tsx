@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet } from 'react-native';
+import { useEffect } from 'react';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
@@ -8,6 +9,18 @@ import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
+  useEffect(() => {
+    const myName = "Kirk";
+
+    const greet = (name) => {
+      return `Wazzup, ${name}! Welcome to this Gorillaz section.`;
+    };
+
+    const classmates = ["Murdoc", "2D", "Russel", "Noodle", "Damon"];
+
+    console.log(classmates.map(name => greet(name)));
+  }, []);
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#e6681a', dark: '#1a1b1e' }}
